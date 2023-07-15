@@ -20,8 +20,8 @@ public class F1 extends Car {
          */
 
 
-        newSpeed=getSpeed()+rate;
-        int currentDirection=getDirection();
+        newSpeed=getCurrentSpeed()+rate;
+        int currentDirection=getCurrentDirection();
         if(newSpeed == 0) {
             changeGear(1);
             changeSpeed(newSpeed,currentDirection);
