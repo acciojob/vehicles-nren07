@@ -6,6 +6,7 @@ public class Vehicle {
     private int currentSpeed;
     private int currentDirection;
 
+
     public Vehicle(String name) {
         this.name=name;
         this.currentDirection=0;
