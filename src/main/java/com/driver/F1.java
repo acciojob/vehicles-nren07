@@ -8,7 +8,7 @@ public class F1 extends Car {
     }
 
     public void accelerate(int rate){
-        int newSpeed = 0; //set the value of new speed by using currentSpeed and rate
+        int newSpeed = getCurrentSpeed()+rate;; //set the value of new speed by using currentSpeed and rate
         /**
          * speed 0: gear 1
          * speed 1-50: gear 1
@@ -19,12 +19,9 @@ public class F1 extends Car {
          * speed more than 250: gear 6
          */
 
-
-        newSpeed=getCurrentSpeed()+rate;
-        int currentDirection=getCurrentDirection();
         if(newSpeed == 0) {
             changeGear(1);
-            changeSpeed(newSpeed,currentDirection);
+            changeSpeed(newSpeed, getCurrentDirection());
 
         }
         //for all other cases, change the gear accordingly
@@ -32,33 +29,31 @@ public class F1 extends Car {
         if(newSpeed > 0) {
             if(newSpeed<=50) {
                 changeGear(1);
-                changeSpeed(newSpeed,currentDirection);
-
+                changeSpeed(newSpeed, getCurrentDirection());
             }
             else if(newSpeed>50 && newSpeed<=100) {
                 changeGear(2);
-                changeSpeed(newSpeed,currentDirection);
+                changeSpeed(newSpeed, getCurrentDirection());
 
             }
             else if(newSpeed>100 && newSpeed<=150) {
                 changeGear(3);
-                changeSpeed(newSpeed,currentDirection);
+                changeSpeed(newSpeed, getCurrentDirection());
 
             }
             else if(newSpeed>150 && newSpeed<=200) {
                 changeGear(4);
-                changeSpeed(newSpeed,currentDirection);
+                changeSpeed(newSpeed, getCurrentDirection());
 
             }
             else if(newSpeed>200 && newSpeed<=250) {
                 changeGear(5);
-                changeSpeed(newSpeed,currentDirection);
+                changeSpeed(newSpeed, getCurrentDirection());
 
             }
             else {
                 changeGear(6);
-                changeSpeed(newSpeed,currentDirection);
-
+                changeSpeed(newSpeed, getCurrentDirection());
             }
         }
     }
